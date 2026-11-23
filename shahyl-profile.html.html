@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shahyl | Aspiring Cyber Security Analyst</title>
+<meta name="description" content="Shahyl, a cybersecurity undergraduate from Sri Lanka building toward a career as a Cyber Security Analyst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --void:#04060c; --panel:#0b111f; --line:#1c2a44;
+  --cyan:#25e8ff; --violet:#8f6bff; --text:#e7edf8; --muted:#92a0b8;
+  --display:"Chakra Petch","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--void);color:var(--text);font:400 1.0625rem/1.65 var(--body);
+  background-image:linear-gradient(rgba(37,232,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(37,232,255,.045) 1px,transparent 1px);
+  background-size:48px 48px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(60rem 30rem at 85% -10%,rgba(143,107,255,.22),transparent 60%),radial-gradient(50rem 28rem at 0% 20%,rgba(37,232,255,.12),transparent 60%);z-index:-1}
+a{color:var(--cyan)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.5rem}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:rgba(4,6,12,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav b{font-family:var(--display);font-size:1.15rem;letter-spacing:.04em}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav ul a:hover{color:var(--cyan)}
+.status{display:inline-flex;align-items:center;gap:.5rem;font:400 .85rem var(--mono);color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:#3dff9a;box-shadow:0 0 10px #3dff9a}
+
+/* hero */
+.hero{padding:clamp(3rem,9vw,6.5rem) 0 clamp(3rem,7vw,5rem)}
+.hero h1{font-size:clamp(3.2rem,12vw,7rem);font-weight:700;letter-spacing:-.01em;margin:1rem 0 1.25rem}
+.role{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--muted);max-width:40rem;margin:0 0 2rem}
+.term{background:rgba(11,17,31,.88);border:1px solid var(--line);border-radius:10px;max-width:38rem;box-shadow:0 0 40px rgba(37,232,255,.08)}
+.term header{display:flex;gap:.4rem;padding:.65rem .9rem;border-bottom:1px solid var(--line)}
+.term header i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.term pre{margin:0;padding:1rem 1.1rem;font:400 .95rem/1.7 var(--mono);color:var(--text);min-height:9.5em;white-space:pre-wrap}
+.term .p{color:var(--cyan)} .term .o{color:var(--muted)}
+.cur{display:inline-block;width:.55em;height:1.05em;background:var(--cyan);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:8px;font:500 1rem var(--body);text-decoration:none;border:1px solid var(--cyan);transition:box-shadow .2s,background .2s}
+.btn.primary{background:var(--cyan);color:#021018}
+.btn.primary:hover{box-shadow:0 0 24px rgba(37,232,255,.55)}
+.btn.ghost{color:var(--cyan)}
+.btn.ghost:hover{background:rgba(37,232,255,.1)}
+
+section{padding:clamp(3rem,7vw,4.75rem) 0;border-top:1px solid var(--line)}
+
+/* about */
+.about{display:grid;gap:2rem;grid-template-columns:1fr}
+@media(min-width:760px){.about{grid-template-columns:15rem 1fr;align-items:start}}
+.photo{aspect-ratio:4/5;border:1px dashed var(--violet);border-radius:12px;display:grid;place-items:center;text-align:center;color:var(--muted);font:400 .9rem var(--mono);background:rgba(143,107,255,.06);padding:1rem}
+.about p{margin:0 0 1rem;max-width:38rem}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.25rem}
+.facts span{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:.3rem .9rem;font-size:.9rem;color:var(--muted)}
+
+/* roadmap */
+.road{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:2px solid var(--line)}
+.road li{position:relative;padding:0 0 2rem 1.2rem}
+.road li:last-child{padding-bottom:0}
+.road li::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--void);border:2px solid var(--muted)}
+.road li.now::before{border-color:var(--cyan);background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.road li.goal::before{border-color:var(--violet);background:var(--violet);box-shadow:0 0 14px var(--violet)}
+.road h3{font-size:1.2rem;margin-bottom:.25rem}
+.road p{margin:0;color:var(--muted);max-width:36rem}
+.tag{display:inline-block;font:400 .78rem var(--mono);padding:.12rem .6rem;border-radius:4px;margin-bottom:.45rem;border:1px solid var(--line);color:var(--muted)}
+.now .tag{color:var(--cyan);border-color:var(--cyan)}
+.goal .tag{color:var(--violet);border-color:var(--violet)}
+
+/* contact */
+.contact{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media(min-width:760px){.contact{grid-template-columns:1fr 1fr}}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.35rem;font-size:.92rem;color:var(--muted)}
+input,textarea{font:400 1rem var(--body);color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:.75rem .9rem;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(37,232,255,.18)}
+textarea{min-height:7.5rem;resize:vertical}
+button.btn{cursor:pointer;justify-self:start}
+.links{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.6rem}
+.links a{font-family:var(--mono);font-size:.95rem}
+.note{color:var(--muted);margin:0;max-width:26rem}
+#sent{color:#3dff9a;font:400 .9rem var(--mono);min-height:1.2em;margin:0}
+
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
+@media(max-width:560px){nav ul{display:none}}
+@media(prefers-reduced-motion:reduce){.cur{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>SHAHYL</b>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="status"><span class="dot" aria-hidden="true"></span>open to opportunities</span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="status"><span class="dot" aria-hidden="true"></span>system online</div>
+    <h1>Shahyl</h1>
+    <p class="role">Aspiring Cyber Security Analyst | Undergraduate in Cybersecurity | Entrepreneur</p>
+    <div class="term" aria-label="Terminal introduction">
+      <header><i></i><i></i><i></i></header>
+      <pre id="typed" aria-live="off"></pre>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="#contact">Let’s Talk Business</a>
+      <a class="btn ghost" href="#links">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <div class="photo">Photo coming soon</div>
+      <div>
+        <p>I’m from Sri Lanka and currently studying Cybersecurity as an undergraduate at the University of Bedfordshire.</p>
+        <p>I’m eager to learn about technology and to build something innovative for the tech world, the way people like Jensen Huang and Elon Musk have.</p>
+        <p>My goal is to become a Cyber Security Analyst, and I’m working towards it one certification, one lab and one project at a time.</p>
+        <div class="facts">
+          <span>Sri Lanka</span>
+          <span>University of Bedfordshire</span>
+          <span>BSc Cybersecurity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <h2>Cyber Security journey</h2>
+    <ol class="road">
+      <li class="now">
+        <span class="tag">in progress</span>
+        <h3>Cybersecurity degree</h3>
+        <p>Building the foundations at the University of Bedfordshire.</p>
+      </li>
+      <li class="now">
+        <span class="tag">in progress</span>
+        <h3>Microsoft Azure Essentials Professional Certificate</h3>
+        <p>Cloud fundamentals from Microsoft and LinkedIn. <a href="https://www.linkedin.com/learning/paths/microsoft-azure-essentials-professional-certificate-by-microsoft-and-linkedin" target="_blank" rel="noopener noreferrer">View the course</a></p>
+      </li>
+      <li>
+        <span class="tag">up next</span>
+        <h3>Google Cybersecurity Certificate</h3>
+        <p>Core security concepts, tools and incident response basics.</p>
+      </li>
+      <li>
+        <span class="tag">up next</span>
+        <h3>CompTIA Security+</h3>
+        <p>An industry-recognised credential for entry-level security roles.</p>
+      </li>
+      <li class="goal">
+        <span class="tag">goal</span>
+        <h3>Cyber Security Analyst</h3>
+        <p>Monitoring, detecting and responding to threats to keep organisations safe.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Let’s talk business</h2>
+    <div class="contact">
+      <div>
+        <p class="note">Running a business and want to talk about ideas, partnerships or your digital presence? Send me a message and I’ll reply personally.</p>
+        <ul class="links" id="links">
+          <li><a href="mailto:shaheel.connect@gmail.com">shaheel.connect@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/shaheel-ahmed-6031a9233" target="_blank" rel="noopener noreferrer">linkedin.com/in/shaheel-ahmed-6031a9233</a></li>
+          <li><a href="https://wa.me/94725282788" target="_blank" rel="noopener noreferrer">WhatsApp: +94 72 528 2788</a></li>
+        </ul>
+      </div>
+      <form id="f">
+        <label>Your name<input name="n" required autocomplete="name"></label>
+        <label>Business name<input name="b" autocomplete="organization"></label>
+        <label>How can I help?<textarea name="m" required></textarea></label>
+        <button class="btn primary" type="submit">Send message</button>
+        <p id="sent" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Shahyl. Learning in public, building toward a career in cyber security.</div>
+</footer>
+
+<script>
+(function(){
+  var el=document.getElementById('typed');
+  var lines=[
+    {p:'$ ',t:'whoami'},
+    {o:'shahyl, cybersecurity undergraduate'},
+    {p:'$ ',t:'cat goal.txt'},
+    {o:'become a Cyber Security Analyst'},
+    {p:'$ ',t:'status --now'},
+    {o:'learning: Microsoft Azure Essentials'}
+  ];
+  var html='';
+  function render(extra){el.innerHTML=html+extra+'<span class="cur"></span>';}
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    lines.forEach(function(l){html+=l.p?'<span class="p">'+l.p+'</span>'+l.t+'\n':'<span class="o">'+l.o+'</span>\n';});
+    render('');return;
+  }
+  var i=0;
+  function next(){
+    if(i>=lines.length){render('');return;}
+    var l=lines[i++];
+    if(l.o){html+='<span class="o">'+l.o+'</span>\n';render('');setTimeout(next,450);return;}
+    var j=0;
+    (function type(){
+      render('<span class="p">'+l.p+'</span>'+l.t.slice(0,j));
+      if(j++<l.t.length){setTimeout(type,70);}
+      else{html+='<span class="p">'+l.p+'</span>'+l.t+'\n';setTimeout(next,350);}
+    })();
+  }
+  next();
+
+  document.getElementById('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(e.target);
+    var body='Name: '+d.get('n')+'\nBusiness: '+d.get('b')+'\n\n'+d.get('m');
+    document.getElementById('sent').textContent='Opening your email app...';
+    window.location.href='mailto:shaheel.connect@gmail.com?subject='+encodeURIComponent('Business enquiry from '+d.get('n'))+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
